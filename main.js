@@ -70,3 +70,19 @@ window.addEventListener('DOMContentLoaded', function () {
 
     lineup_array = document.querySelectorAll('.lineup-child-cont  .fixed');
 })
+
+function clickWA(){
+    window.open('https://wa.me/918548863234', '_blank');
+}
+
+function clickIG(){
+    window.open('https://www.instagram.com/tripodeal1/', '_blank');
+}
+
+function clickFB(){
+    window.open('https://www.facebook.com/tripodeal1/', '_blank');
+}
+
+function clickEmail(){
+    window.open('mailto:tripodeal@gmail.com', '_blank');
+}
