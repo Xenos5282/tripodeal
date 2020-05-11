@@ -9,19 +9,20 @@
 
     <script src="https://kit.fontawesome.com/a5921b4238.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>TRIP O DEAL</title>
+    <title>TRIP O DEAL</title>  
 </head>
 
 <body>
+    <div id="psuedo"></div>
     <div id="navbar">
         <div id="logo">
             <img src="./assets/logo trip.png" alt="TRIP-O-DEAL">
         </div>
         <div id="links">
-            <div class="link-child" id="home">Home</div>
+            <div class="link-child nav-active" id="home">Home</div>
             <div class="link-child" id="packages">Packages</div>
-            <div class="link-child" id="attractions">Attractions</div>
-            <div class="link-child" id="activities">Activities</div>
+            <div class="link-child" id="attractions" onclick="window.location.replace('./attractions')">Attractions</div>
+            <div class="link-child" id="activities" onclick="window.location.replace('./activities')">Activities</div>
             <div class="link-child" id="gallery">Gallery</div>
             <div class="link-child" id="contact-us">Contact Us</div>
         </div>
@@ -105,8 +106,37 @@
             <div id="head-cont">
                 <h2 id="sec-head">Why choose us?</h2>
             </div>
-            <div class="content-container">
-
+            <div class="content-container" id="why-cont">
+                <div class="pointer">
+                    <img src="./assets/SVG/1.svg" alt="icon-2">
+                    <span class="reason">
+                        Customised Packages
+                    </span>
+                </div>
+                <div class="pointer">
+                    <img src="./assets/SVG/2.svg" alt="icon-2">
+                    <span class="reason">
+                        24/7 Support
+                    </span>
+                </div>
+                <div class="pointer">
+                    <img src="./assets/SVG/3.svg" alt="icon-2">
+                    <span class="reason">
+                        Jaw Dropping Offers
+                    </span>
+                </div>
+                <div class="pointer">
+                    <img src="./assets/SVG/4.svg" alt="icon-2">
+                    <span class="reason">
+                        Spectacular Resorts
+                    </span>
+                </div>
+                <div class="pointer">
+                    <img src="./assets/SVG/5.svg" alt="icon-2">
+                    <span class="reason">
+                        Awesome Experience
+                    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -144,7 +174,7 @@
         </div>
     </footer>
     <footer id="foot-last">
-        &copy;2020, All Rights Reserved, tripodeal.com
+        &copy;2020, All Rights Reserved, tripodeal.in
     </footer>
 
     <script type="text/javascript" src="./main.js"></script>

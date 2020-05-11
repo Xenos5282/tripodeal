@@ -35,6 +35,15 @@
         align-items: center;
     }
 
+    #psuedo {
+        height: 0px;
+        width: 100px;
+        position: absolute;
+        top: 0;
+        background: transparent;
+        z-index: -20;
+    }
+
     #slider {
         height: 90vh;
         width: 100vw;
@@ -97,7 +106,8 @@
     }
 
     #navbar {
-        position: absolute;
+        position: fixed;
+        top: 0;
         width: 100%;
         height: 10vh;
         background: var(--main-light);
@@ -105,6 +115,7 @@
         flex-direction: row;
         justify-content: flex-start;
         padding-left: 3vw;
+        z-index: 30;
     }
 
     #logo {
@@ -146,11 +157,23 @@
         box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.1);
     }
 
+    #links>.nav-active {
+        color: var(--sec-hl);
+        background: var(--main-night);
+        box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.1);
+        font-style: italic;
+        font-weight: 600;
+    }
+
+    .scrolled {
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
     #bottom {
         height: auto;
         width: 100%;
         background-image: linear-gradient(#ffd717, #f9ff21);
-        min-height: 100vh;  
+        min-height: 100vh;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
@@ -186,7 +209,7 @@
         width: 100%;
         font-weight: 500;
         font-size: 2em;
-        font-style: italic; 
+        font-style: italic;
     }
 
     #head-cont {
@@ -195,53 +218,61 @@
         padding: 0 0 0 10vw;
     }
 
-    #main-content{
+    #main-content {
         width: 100%;
         flex-direction: column;
     }
 
-    .content-container{
-        width: 90%; 
+    .content-container {
+        width: 90%;
         margin-top: 2%;
         margin-bottom: 2%;
     }
 
-    .content-container:nth-child(2n+1){
+    .content-container:nth-child(2n+1) {
         flex-direction: row;
-    }   
+    }
 
-    .content-container:nth-child(2n+0){
+    .content-container:nth-child(2n+0) {
         flex-direction: row-reverse;
-    } 
+    }
 
-    .text{
+    .text {
         width: 60%;
         color: var(--main-night);
         font-size: 1.2em;
         display: inline;
     }
 
-    .img{
+    .img {
+        height: 100%;
         width: 35%;
     }
 
-    .content-container:nth-child(2n+1)>.text{
-        padding: 1% 2% 1% 0;
-    }   
+    .img>img {
+        width: 100%;
+        height: auto;
+    }
 
-    .content-container:nth-child(2n+1)>.img{
-        padding: 1% 0 1% 2%;
-        border-left: 3px solid var(--sec-hl);
-    } 
-
-    .content-container:nth-child(2n+0)>.text{
-        padding: 1% 0 1% 2%;
-    }   
-
-    .content-container:nth-child(2n+0)>.img{
+    .content-container:nth-child(2n+1)>.text {
         padding: 1% 2% 1% 0;
         border-right: 3px solid var(--sec-hl);
-    } 
+        text-align: right;
+    }
+
+    .content-container:nth-child(2n+1)>.img {
+        padding: 1% 0 1% 2%;
+    }
+
+    .content-container:nth-child(2n+0)>.text {
+        padding: 1% 0 1% 2%;
+        border-left: 3px solid var(--sec-hl);
+        text-align: left;
+    }
+
+    .content-container:nth-child(2n+0)>.img {
+        padding: 1% 2% 1% 0;
+    }
 
     #sec-head {
         color: var(--main-night);
@@ -249,10 +280,10 @@
         width: 100%;
         font-weight: 500;
         font-size: 2em;
-        font-style: italic; 
+        font-style: italic;
     }
 
-    footer{
+    footer {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -260,56 +291,73 @@
         color: var(--sec-hl);
     }
 
-    footer > div{
+    footer>div {
         padding: 2% 4%;
     }
 
-    #sitemap{
+    #sitemap {
         flex-direction: column;
         color: var(--sec-hl);
         font-size: 1em;
         font-weight: 500;
     }
 
-    .foot-head{
+    .foot-head {
         font-size: 1.5em;
         margin-top: 3%;
         margin-bottom: 1%;
         letter-spacing: 0.2em;
     }
 
-    ul{
+    ul {
         margin-top: 0;
     }
 
-    #social{
+    #social {
         flex-direction: column;
         color: var(--sec-hl);
         font-size: 1em;
         font-weight: 500;
     }
 
-    i{
+    #social i {
         font-size: 3em;
         margin-bottom: 7px;
         cursor: pointer;
     }
 
-    #reach{
+    #reach {
         flex-direction: column;
         color: var(--sec-hl);
         font-size: 1em;
         font-weight: 500;
     }
 
-    #reach a{
+    #reach a {
         font-weight: 600;
         color: var(--sec-hl);
         text-decoration: none;
     }
 
-    #foot-last{
+    #foot-last {
         padding-bottom: 50px;
         font-weight: 600;
+    }
+
+    .pointer {
+        flex-direction: column;
+        width: 20%;
+        padding: 0 2%;
+    }
+
+    .pointer > img{
+        height: 100px;
+        width: auto;
+    }
+
+    .reason{
+        text-align: center;
+        color: var(--main-night);
+        font-weight: 500;
     }
 }

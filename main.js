@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', function () {
     prev = document.querySelector('.prev');
     next = document.querySelector('.next');
 
-    timer = setInterval(CallNext,5000);
+    timer = setInterval(CallNext, 5000);
 
     document.querySelector('img[alt="left"]').addEventListener('click', CallNext);
     document.querySelector('img[alt="right"]').addEventListener('click', CallPrev);
@@ -71,18 +71,38 @@ window.addEventListener('DOMContentLoaded', function () {
     lineup_array = document.querySelectorAll('.lineup-child-cont  .fixed');
 })
 
-function clickWA(){
+window.onscroll = function (e) {
+    document.querySelector('#navbar').classList.add('scrolled'); 
+    if(isElementInViewport(document.querySelector('#psuedo'))){
+        document.querySelector('#navbar').classList.remove('scrolled');
+    }
+}
+
+function isElementInViewport (el) {
+
+    var rect = el.getBoundingClientRect();
+
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
+    );
+}
+
+// Psuedo Hyperlinks
+function clickWA() {
     window.open('https://wa.me/918548863234', '_blank');
 }
 
-function clickIG(){
+function clickIG() {
     window.open('https://www.instagram.com/tripodeal1/', '_blank');
 }
 
-function clickFB(){
+function clickFB() {
     window.open('https://www.facebook.com/tripodeal1/', '_blank');
 }
 
-function clickEmail(){
+function clickEmail() {
     window.open('mailto:tripodeal@gmail.com', '_blank');
 }
