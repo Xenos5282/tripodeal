@@ -72,9 +72,11 @@ window.addEventListener('DOMContentLoaded', function () {
 })
 
 window.onscroll = function (e) {
-    document.querySelector('#navbar').classList.add('scrolled'); 
+    document.querySelector('#navbar').classList.add('scrolled');
+    document.querySelector('#mob-nav').classList.add('scrolled'); 
     if(isElementInViewport(document.querySelector('#psuedo'))){
         document.querySelector('#navbar').classList.remove('scrolled');
+        document.querySelector('#mob-nav').classList.remove('scrolled');
     }
 }
 
@@ -89,6 +91,55 @@ function isElementInViewport (el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
     );
 }
+
+var open=0;
+
+function toggleOpaque(){
+    var list = document.querySelectorAll('body')[0].children;
+    list[4].classList.toggle('opacity');
+    list[6].classList.toggle('opacity');
+    list[7].classList.toggle('opacity');
+    list[8].classList.toggle('opacity');
+
+    // toggle scrolling too
+    document.querySelector('html').classList.toggle('no-scroll');
+}
+
+document.querySelector('#left-link').addEventListener('click',function(){
+    if(open==0){
+        document.querySelector('#left-menu').classList.add('left-slide');
+        open=1;
+        toggleOpaque();
+    }
+    else if(open==1){
+        document.querySelector('#left-menu').classList.remove('left-slide');
+        open=0;
+        toggleOpaque();
+    }
+    else if(open==2){
+        document.querySelector('#right-menu').classList.remove('right-slide');
+        document.querySelector('#left-menu').classList.add('left-slide');
+        open=1;
+    }
+});
+
+document.querySelector('#right-link').addEventListener('click',function(){
+    if(open==0){
+        document.querySelector('#right-menu').classList.add('right-slide');
+        open=2;
+        toggleOpaque();
+    }
+    else if(open==2){
+        document.querySelector('#right-menu').classList.remove('right-slide');
+        open=0;
+        toggleOpaque();
+    }
+    else if(open==1){
+        document.querySelector('#left-menu').classList.remove('left-slide');
+        document.querySelector('#right-menu').classList.add('right-slide');
+        open=2;
+    }
+});
 
 // Psuedo Hyperlinks
 function clickWA() {

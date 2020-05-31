@@ -9,8 +9,23 @@
 
     <script src="https://kit.fontawesome.com/a5921b4238.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>TRIP O DEAL</title>  
+    <title>Home | tripodeal.in</title>
 </head>
+
+<div id="left-menu">
+    <div class="link-child nav-active" id="home">Home</div>
+    <div class="link-child" id="packages">Packages</div>
+    <div class="link-child" id="attractions" onclick="window.location.replace('./attractions')">Attractions</div>
+    <div class="link-child" id="activities" onclick="window.location.replace('./activities')">Activities</div>
+    <div class="link-child" id="gallery">Gallery</div>
+    <div class="link-child" id="contact-us" onclick="window.location.replace('./contact-us')">Contact Us</div>
+</div>
+
+<div id="right-menu">
+    <div class="link-child" id="call"><i class="fas fa-phone-alt"></i>&nbsp;Call Us</div>
+    <div class="link-child" id="wap"><i class="fab fa-whatsapp"></i>&nbsp;WhatsApp Us</div>
+    <div class="link-child" id="email"><i class="fas fa-at"></i>&nbsp;Email Us</div>
+</div>
 
 <body>
     <div id="psuedo"></div>
@@ -21,10 +36,11 @@
         <div id="links">
             <div class="link-child nav-active" id="home">Home</div>
             <div class="link-child" id="packages">Packages</div>
-            <div class="link-child" id="attractions" onclick="window.location.replace('./attractions')">Attractions</div>
+            <div class="link-child" id="attractions" onclick="window.location.replace('./attractions')">Attractions
+            </div>
             <div class="link-child" id="activities" onclick="window.location.replace('./activities')">Activities</div>
             <div class="link-child" id="gallery">Gallery</div>
-            <div class="link-child" id="contact-us"  onclick="window.location.replace('./contact-us')">Contact Us</div>
+            <div class="link-child" id="contact-us" onclick="window.location.replace('./contact-us')">Contact Us</div>
         </div>
     </div>
     <div id="slider">
@@ -61,6 +77,19 @@
             <span class="big-text-shadow">CELEBRATE</span>
         </div>
     </div>
+
+    <div id="mob-nav">
+        <div class="ico">
+            <img id="left-link" src="./icons/menu.svg" alt="Menu">
+        </div>
+        <div class="ico" id="main-logo">
+            <img src="./assets/logo trip.png" alt="Menu">
+        </div>
+        <div class="ico">
+            <img id="right-link" src="./icons/contact.svg" alt="Menu">
+        </div>
+    </div>
+
     <div id="bottom">
         <div id="head-cont">
             <h2 id="main-head">Unfold your story, complemented by us</h2>
