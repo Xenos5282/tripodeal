@@ -73,14 +73,14 @@ window.addEventListener('DOMContentLoaded', function () {
 
 window.onscroll = function (e) {
     document.querySelector('#navbar').classList.add('scrolled');
-    document.querySelector('#mob-nav').classList.add('scrolled'); 
-    if(isElementInViewport(document.querySelector('#psuedo'))){
+    document.querySelector('#mob-nav').classList.add('scrolled');
+    if (isElementInViewport(document.querySelector('#psuedo'))) {
         document.querySelector('#navbar').classList.remove('scrolled');
         document.querySelector('#mob-nav').classList.remove('scrolled');
     }
 }
 
-function isElementInViewport (el) {
+function isElementInViewport(el) {
 
     var rect = el.getBoundingClientRect();
 
@@ -88,15 +88,15 @@ function isElementInViewport (el) {
         rect.top >= 0 &&
         rect.left >= 0 &&
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
 
-var open=0;
+var open_menu = 0;
 
-function toggleOpaque(){
+function toggleOpaque() {
     var list = document.querySelectorAll('body')[0].children;
-    list[4].classList.toggle('opacity');
+    list[5].classList.toggle('opacity');
     list[6].classList.toggle('opacity');
     list[7].classList.toggle('opacity');
     list[8].classList.toggle('opacity');
@@ -105,39 +105,35 @@ function toggleOpaque(){
     document.querySelector('html').classList.toggle('no-scroll');
 }
 
-document.querySelector('#left-link').addEventListener('click',function(){
-    if(open==0){
+document.querySelector('#left-link').addEventListener('click', function () {
+    if (open_menu == 0) {
         document.querySelector('#left-menu').classList.add('left-slide');
-        open=1;
+        open_menu = 1;
         toggleOpaque();
-    }
-    else if(open==1){
+    } else if (open_menu == 1) {
         document.querySelector('#left-menu').classList.remove('left-slide');
-        open=0;
+        open_menu = 0;
         toggleOpaque();
-    }
-    else if(open==2){
+    } else if (open_menu == 2) {
         document.querySelector('#right-menu').classList.remove('right-slide');
         document.querySelector('#left-menu').classList.add('left-slide');
-        open=1;
+        open_menu = 1;
     }
 });
 
-document.querySelector('#right-link').addEventListener('click',function(){
-    if(open==0){
+document.querySelector('#right-link').addEventListener('click', function () {
+    if (open_menu == 0) {
         document.querySelector('#right-menu').classList.add('right-slide');
-        open=2;
+        open_menu = 2;
         toggleOpaque();
-    }
-    else if(open==2){
+    } else if (open_menu == 2) {
         document.querySelector('#right-menu').classList.remove('right-slide');
-        open=0;
+        open_menu = 0;
         toggleOpaque();
-    }
-    else if(open==1){
+    } else if (open_menu == 1) {
         document.querySelector('#left-menu').classList.remove('left-slide');
         document.querySelector('#right-menu').classList.add('right-slide');
-        open=2;
+        open_menu = 2;
     }
 });
 
@@ -156,4 +152,8 @@ function clickFB() {
 
 function clickEmail() {
     window.open('mailto:tripodeal@gmail.com', '_blank');
+}
+
+function clickCall() {
+    window.open('tel:+918548863234', '_blank');
 }
