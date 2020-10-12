@@ -1,2 +1,2 @@
 # tripodeal
-Freelance web project for a travel startup
+A freelance web project for a travel startup
